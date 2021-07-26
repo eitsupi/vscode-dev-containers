@@ -30,7 +30,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
         devtools \
         languageserver \
         httpgd \
-    && rm -rf /tmp/downloaded_packages
+    && rm -rf /tmp/downloaded_packages \
+    && Rscript -e 'remotes::install_github("ManuelHentschel/vscDebugger@*release", dependencies = FALSE)'
 
 # R Session watcher settings.
 # See more details: https://github.com/REditorSupport/vscode-R/wiki/R-Session-watcher
